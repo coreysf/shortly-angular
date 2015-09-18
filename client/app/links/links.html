@@ -1,3 +1,10 @@
 <div id='container'>
   <!-- Your html here -->
+  <img src='/redirect_icon.png'/>
+  <div class='info'>
+    <div class='visits'><span ng-model="visits" class='count'>{{ visits }}</span>Visits</div>
+    <div class='title'>{{ title }}</div>
+    <div class='original'>{{ url }}</div>
+    <a href='{{ base_url }}/{{ code }}'>{{ base_url }}/{{ code }}</a>
+  </div>
 </div>
