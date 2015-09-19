@@ -1,10 +1,10 @@
 <div id='container'>
   <!-- Your html here -->
   <img src='/redirect_icon.png'/>
-  <div ng-repeat="datum in data" class='info'>
-    <div class='visits'><span class='count'>{{ data.visits }}</span>Visits</div>
-    <div class='title'>{{ data.title }}</div>
-    <div class='original'>{{ data.url }}</div>
-    <a href='{{ data.base_url }}/{{ data.code }}'>{{ data.base_url }}/{{ data.code }}</a>
+  <div ng-repeat="datum in data.links" class='info'>
+    <div class='visits'><span class='count'>{{ datum.visits }}</span>Visits</div>
+    <div class='title'>{{ datum.title }}</div>
+    <div class='original'>{{ datum.url }}</div>
+    <a href='{{ datum.base_url }}/{{ datum.code }}'>{{ datum.base_url }}/{{ datum.code }}</a>
   </div>
 </div>
