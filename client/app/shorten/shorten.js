@@ -2,17 +2,14 @@ angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($http, $scope, $location, Links) {
   $scope.link = {};
-  $scope.longUrl = "";
-  $scope.addLink = function (link) {
-    $http({
-      method: 'POST',
-      url: '/api/links',
-      data: link
-    })
+  $scope.addLink = function () {
+    // console.log("$scope.longUrl: " + $scope.longUrl);
+    Links.addLink($scope.link)
     .then(function (res) {
-      // return res.status;
-      // return res.redirect(301, '/links');
-      $location.url('/links');
+      $location.path('/links');     // $location is Angular module. Keeps this a single-page
+    })                          // app & prevents controllers from being reloaded.
+    .catch(function (err) {
+      console.log(err);
     });
   };
 });

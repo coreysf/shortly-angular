@@ -6,8 +6,11 @@ angular.module('shortly.links', [])
   $scope.getLinks = function () {
     Links.getLinks()
     .then(function (promise) {
+      console.log("promise.data", JSON.stringify(promise.data));
       $scope.data.links = promise.data;
-      console.log(JSON.stringify(promise.data));
+    })
+    .catch(function (err) {
+      console.log(err);
     });
 
     // .then(function (token) {

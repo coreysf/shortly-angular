@@ -9,7 +9,20 @@ angular.module('shortly.services', [])
     });
   };
 
-  return {getLinks: getLinks};
+  var addLink = function(link) {
+    console.log("link: " + link);
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    });
+  };
+
+  return {
+    getLinks: getLinks,
+    addLink: addLink
+  };
+  // return {getLinks: getLinks};  // OLD POSITION
 
 })
 .factory('Auth', function ($http, $location, $window) {
