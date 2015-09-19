@@ -58,4 +58,10 @@ angular.module('shortly', [
       $location.path('/signin');
     }
   });
+
+  // $rootScope.$on('$routeChangeSuccess', function (evt, next, current) {
+  //   if ($location.path() === '/links') {
+  //     evt.targetScope.getLinks();
+  //   }
+  // })
 });
