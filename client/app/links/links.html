@@ -12,16 +12,13 @@
 
   <input type='text' ng-model='search' placeholder='filter' />    <!-- FROM SOLUTION CODE -->
 
-  <div ng-repeat="datum in data.links" class='link'>
-
-<!--  
- | filter:search | orderBy: 'created_at
--->
+  <div ng-repeat="datum in data.links | filter:search | orderBy: created_at" class="link">
+ 
 
     <img src='../assets/redirect_icon.png'/>
     <div class='visits'><span class='count'>{{ datum.visits }}</span>Visits</div>
     <div class='title'>{{ datum.title }}</div>
     <div class='original'>{{ datum.url }}</div>
-    <a href='{{ datum.base_url }}/{{ datum.code }}'>{{ datum.base_url }}/{{ datum.code }}</a>
+    <a href='http://localhost:8000/api/links/{{ datum.code }}'>{{ datum.base_url }}/{{ datum.code }}</a>
   </div>
 </div>

@@ -10,26 +10,20 @@
   </div>
   <div id='container'></div>
 
-  <form ng-submit="addLink()" novalidate>
+  <form name="shortlyForm" ng-submit="addLink()" novalidate>
       <input type="url" 
       name="link" 
       ng-model="link.url"
+      ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}"
       placeholder="Enter your url here" required>
 
-<!--  
-      ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty"
-  -->
-
       <button type='submit' value='Shorten' 
-      ng-disabled='shortlyForm.$invalid'>
+      ng-disabled='shortlyForm.$invalid'>add</button>
   </form>
-  <img class='spinner' src='/spiffygif_46x46.gif'>
-  <!-- 
   <div ng-if='shortlyForm.link.$error.required && shortlyForm.$dirty'class='message'>
     <h2>Url required</h2>
   </div>
   <div ng-show='shortlyForm.link.$error.url && shortlyForm.$dirty'class='message'>
     <h2>Not a valid url</h2>
   </div>
--->
 </div>
